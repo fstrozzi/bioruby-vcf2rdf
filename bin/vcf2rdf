@@ -1,0 +1,8 @@
+
+$:<<File.expand_path(File.dirname(File.dirname(__FILE__))+"/lib")
+
+require "bio-vcf2rdf" 
+
+parser = BioVcf2rdf::Parser.new(ARGV.shift)
+parser.traverse
+

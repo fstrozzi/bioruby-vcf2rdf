@@ -8,5 +8,7 @@
 #
 # In this file only require other files. Avoid other source code.
 
-require 'bio-vcf2rdf/vcf2rdf.rb'
-
+require 'uuid'
+require 'bio-vcf2rdf/parser'
+require 'bio-vcf2rdf/vcf'
+require 'bio-vcf2rdf/rdfizer'
