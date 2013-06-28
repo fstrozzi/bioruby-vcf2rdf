@@ -15,6 +15,7 @@ module BioVcf2rdf
 			str << "@prefix sample: <http://genome.db/sample/> .\n"
 			str << "@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n"
 			str << "@prefix faldo: <http://biohackathon.org/resource/faldo#> .\n"
+			str << "@prefix so: <#{CONSEQUENCES["uri"]}>\n"
 			str
 		end
 
@@ -26,7 +27,7 @@ module BioVcf2rdf
 			str << "var:#{vcf.id} var:referenceAllele \"#{vcf.ref}\" .\n"
 			str << "var:#{vcf.id} var:alternativeAllele \"#{vcf.alt}\" .\n"
 			str << "var:#{vcf.id} var:quality \"#{vcf.quality}\"^^xsd:float .\n"
-			str << "var:#{vcf.id} var:effect \"#{vcf.effect}\" .\n" unless vcf.effect.nil?
+			str << "var:#{vcf.id} var:effect so:#{CONSEQUENCES[vcf.effect]} .\n" unless vcf.effect.nil?
 			vcf.genotype.each_pair do |sample,genotype|
 				uuid = "uuid-"+get_uuid
 				genotype_info = genotype.split(":")
@@ -44,8 +45,6 @@ module BioVcf2rdf
 		def get_uuid
 			java.util.UUID.new(@random.nextLong(),@random.nextLong()).to_s	
 		end
-
-		
 
 	end
 

@@ -12,7 +12,7 @@ module BioVcf2rdf
 			rdf = Rdfizer.new(@species)
 			out.write rdf.prefix
 			index = 0
-			puts "\nRecord converted: "
+			puts "\nConversion progress: "
 			@file.each do |line|
 				line.chomp!
 				if line.start_with? "#CHROM"
@@ -22,11 +22,11 @@ module BioVcf2rdf
 					vcf = Vcf.new(line,samples,index)
 					out.write rdf.convert(vcf)
 					if index % 10000 == 0
-						print "\r#{index}"
+						print "\r#{index} records"
 					end
 				end
 			end
-			puts "\nTotal record converted: #{index}"
+			puts "\nTotal records converted: #{index}"
 			out.close
 		end	
 
