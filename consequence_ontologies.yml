@@ -34,4 +34,4 @@ feature_elongation: SO:0001907
 feature_truncation: SO:0001906
 intergenic_variant: SO:0001628
 intergenic_region: SO:0000605
-uri: http://www.sequenceontology.org/miso/current_release/term/
+uri: http://purl.org/obo/owl/SO#
