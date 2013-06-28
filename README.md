@@ -6,7 +6,7 @@ Simple converter from VCF 4.1 formato to RDF turtle format.
 
 For ontologies:
 
-* It uses [FALDO](https://github.com/JervenBolleman/FALDO) for variation position 
+* It uses [FALDO (https://github.com/JervenBolleman/FALDO#known-positions) ExactPosition to describe locations 
 * A simple ontology to describe variation properties:
 	* <http://genome.db/var/referenceAllele> : Literal for the reference allele base
 	* <http://genome.db/var/alternativeAllele> : Literal for the alternative allele base (or bases for InDel)
