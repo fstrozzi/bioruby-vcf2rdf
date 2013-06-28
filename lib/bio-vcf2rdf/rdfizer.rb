@@ -33,7 +33,7 @@ module BioVcf2rdf
 				genotype_info = genotype.split(":")
 				str << "var:#{vcf.id} var:uuid var:#{uuid} .\n"
 				str << "sample:#{sample} ngs:hasVariation var:#{uuid} .\n"
-				str << "var:#{uuid} var:hasGenotype \"#{genotype_info[0]}\".\n"
+				str << "var:#{uuid} var:hasGenotype var:#{GENOTYPES[genotype_info[0]]} .\n"
 				str << "var:#{uuid} var:referenceAlleleCoverage \"#{genotype_info[1].split(",")[0]}\"^^xsd:int .\n"
 				str << "var:#{uuid} var:alternativeAlleleCoverage \"#{genotype_info[1].split(",")[1]}\"^^xsd:int .\n"
 			end

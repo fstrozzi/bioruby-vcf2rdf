@@ -13,6 +13,8 @@ require 'yaml'
 
 CONSEQUENCES = YAML.load_file(File.expand_path(File.dirname(File.dirname(__FILE__))+"/consequence_ontologies.yml"))
 
+GENOTYPES = YAML.load_file(File.expand_path(File.dirname(File.dirname(__FILE__))+"/genotype_ontologies.yml"))
+
 require 'uuid'
 require 'bio-vcf2rdf/parser'
 require 'bio-vcf2rdf/vcf'
