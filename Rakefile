@@ -43,3 +43,27 @@ Rake::RDocTask.new do |rdoc|
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
+
+namespace "ontology" do
+	
+	desc "Download SO variation consequence terms and generate a YAML"
+	task "ensembl" do
+		require 'nokogiri'
+		require 'open-uri'
+		require 'yaml'
+		page = Nokogiri::HTML(open("http://ensembl.org/info/docs/variation/predicted_data.html"))
+		content = []
+		page.xpath('//table[@id="consequence_type_table"]').each {|row| content = row.content}
+		ontologies = []
+		content.split("\n\n\n").slice(1,content.size).each do |row| 
+			r = row.split("\n\t")
+			ontologies << [r[0].tr("\t",''),r[2]]
+		end
+		ontologies << ["uri","http://www.sequenceontology.org/miso/current_release/term/"]
+		out = File.open("consequence_ontologies.yml","w")
+		out.write(YAML.dump(Hash[ontologies]))
+	end
+
+
+end
+
