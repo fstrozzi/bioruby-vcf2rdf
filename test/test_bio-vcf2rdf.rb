@@ -5,7 +5,7 @@ class TestBioVcf2rdf < Test::Unit::TestCase
   context BioVcf2rdf::Rdfizer do
 		should "emit standard prefixes" do
 			r = BioVcf2rdf::Rdfizer.new("cow")
-			assert_equal("@prefix ngs: <http://genome.db/ngs/> .\n@prefix var: <http://genome.db/var/> .\n@prefix sample: <http://genome.db/sample/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix faldo: <http://biohackathon.org/resource/faldo#> .\n@prefix so: <http://www.sequenceontology.org/miso/current_release/term/> .",r.prefix)
+			assert_equal("@prefix ngs: <http://genome.db/ngs/> .\n@prefix var: <http://genome.db/var/> .\n@prefix sample: <http://genome.db/sample/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix faldo: <http://biohackathon.org/resource/faldo#> .\n@prefix so: <http://www.sequenceontology.org/miso/current_release/term/> .\n",r.prefix)
   	end
 	end
 
