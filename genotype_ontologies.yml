@@ -1,0 +1,5 @@
+---
+"0/0": "homozygousReference"
+"0/1": "heterozygous"
+"1/1": "homozygousAlternative"
+"1/2": "homozygousAlternative"
