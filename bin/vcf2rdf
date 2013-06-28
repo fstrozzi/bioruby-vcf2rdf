@@ -3,6 +3,18 @@ $:<<File.expand_path(File.dirname(File.dirname(__FILE__))+"/lib")
 
 require "bio-vcf2rdf" 
 
-parser = BioVcf2rdf::Parser.new(ARGV.shift)
+if ARGV.size < 2
+	puts "USAGE: #{$0} [VCF file] [species name (e.g. human, mouse ...)]"
+	exit
+end
+
+file = ARGV.shift
+species = ARGV.shift
+parser = BioVcf2rdf::Parser.new(file,species)
+
+start = Time.now	
 parser.traverse
+finish = Time.now
+
+puts "Time: #{finish-start} sec."
 
