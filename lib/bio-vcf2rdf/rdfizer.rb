@@ -15,7 +15,7 @@ module BioVcf2rdf
 			str << "@prefix sample: <http://genome.db/sample/> .\n"
 			str << "@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n"
 			str << "@prefix faldo: <http://biohackathon.org/resource/faldo#> .\n"
-			str << "@prefix so: <#{CONSEQUENCES["uri"]}>\n"
+			str << "@prefix so: <#{CONSEQUENCES["uri"]}> .\n"
 			str
 		end
 
