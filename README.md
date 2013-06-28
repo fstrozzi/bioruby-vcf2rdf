@@ -4,6 +4,8 @@
 
 Simple converter from VCF 4.1 format to RDF turtle format.
 
+It requires JRuby.
+
 For ontologies:
 
 * It uses [FALDO](https://github.com/JervenBolleman/FALDO#known-positions) ExactPosition to describe locations 
