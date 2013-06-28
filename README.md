@@ -13,7 +13,7 @@ For ontologies:
 	* <http://genome.db/var/referenceAllele> : Literal for the reference allele base
 	* <http://genome.db/var/alternativeAllele> : Literal for the alternative allele base (or bases for InDel)
 	* <http://genome.db/var/quality> : xsd:float for quality score
-	* <http://genome.db/var/effect> : Literal for the variation effect on annotated genes (using SO)
+	* <http://genome.db/var/effect> : SO URI for the variation effect on annotated genes
 	* <http://genome.db/var/hasGenotype> : Literal for the genotype description for a particular sample (i.e. "0/0" "0/1" "1/1" "1/2")
 	* <http://genome.db/var/referenceAlleleCoverage> : xsd:int for reference allele coverage
 	* <http://genome.db/var/alternativeAlleleCoverage> : xsd:int for alternative allele coverage
