@@ -11,8 +11,7 @@
 # Load consequence ontology yaml
 require 'yaml'
 
-CONSEQUENCES = YAML.load_file(File.expand_path(File.dirname(File.dirname(__FILE__))+"/consequence_ontologies.yml"))
-
+CONSEQUENCES = YAML.load_file(File.expand_path(File.dirname(File.dirname(__FILE__))+"/sequence_ontologies.yml"))
 GENOTYPES = YAML.load_file(File.expand_path(File.dirname(File.dirname(__FILE__))+"/genotype_ontologies.yml"))
 
 require 'uuid'
