@@ -60,9 +60,25 @@ namespace "ontology" do
 			end
 		end
 		out['uri'] = "http://purl.org/obo/owl/SO#"
-		File.open("consequence_ontologies.yml","w") {|y| y.write(out.to_yaml)}
+		File.open("sequence_ontologies.yml","w") {|y| y.write(out.to_yaml)}
+	end
+
+	desc "generate RDF turtle of sequence ontology yaml"
+	task :rdf do
+		so = YAML.load_file("sequence_ontologies.yml")
+		out = File.open("sequence_ontologies.ttl","w")
+		out.write("@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n")
+		out.write("@prefix so: <#{so["uri"]}> .\n")
+		so.each_pair do |term,id|
+			out.write("so:#{id} rdfs:label \"#{term}\" .\n") unless term == "uri"
+		end
+		out.close()
 	end
 
 
+
+
 end
+
+
 
